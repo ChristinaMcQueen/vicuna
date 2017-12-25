@@ -20,11 +20,8 @@ const createLintingRule = () => ({
 });
 
 module.exports = {
-    // context: path.resolve(__dirname, '../'),
+    context: path.resolve(__dirname, '../'),
     cache: true,
-    // entry: {
-    //     homepage: 'src/homepage/main.js'
-    // },
     entry: Object.keys(utils.entries).reduce((r, key) => {
         r[key] = utils.entries[key].path;
         return r;
