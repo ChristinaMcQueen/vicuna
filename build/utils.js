@@ -1,12 +1,15 @@
+const fs = require('fs');
 const path = require('path');
-const config = require('../config');
+const glob = require('glob');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const config = require('../config');
 const packageConfig = require('../package.json');
 
 exports.assetsPath = (_path) => {
     const assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory;
+        ? config.build.assetsSubDirectory
+        : config.dev.assetsSubDirectory;
 
     return path.posix.join(assetsSubDirectory, _path);
 };
@@ -41,8 +44,8 @@ exports.cssLoaders = (opts) => {
             });
         }
 
-    // Extract CSS when that option is specified
-    // (which is the case during production build)
+        // Extract CSS when that option is specified
+        // (which is the case during production build)
         if (options.extract) {
             return ExtractTextPlugin.extract({
                 use: loaders,
@@ -52,7 +55,7 @@ exports.cssLoaders = (opts) => {
         return ['vue-style-loader'].concat(loaders);
     }
 
-  // https://vue-loader.vuejs.org/en/configurations/extract-css.html
+    // https://vue-loader.vuejs.org/en/configurations/extract-css.html
     return {
         css: generateLoaders(),
         postcss: generateLoaders(),
@@ -97,3 +100,34 @@ exports.createNotifierCallback = () => {
         });
     };
 };
+
+exports.getEntries = () => {
+    const entries = {};
+    let moduleConfig;
+    try {
+        moduleConfig = require('../module.config.json');
+    } catch (e) {
+        moduleConfig = {};
+    }
+    glob.sync('src/*/module.json').forEach((file) => {
+        const module = JSON.parse(fs.readFileSync(path.join(__dirname, '..', file)).toString());
+        const { name, entry } = module;
+        if (moduleConfig.includes && moduleConfig.includes.length) {
+            if (moduleConfig.includes.indexOf(name) < 0) {
+                return;
+            }
+        }
+        if (moduleConfig.excludes && moduleConfig.excludes.length) {
+            if (moduleConfig.excludes.indexOf(name) >= 0) {
+                return;
+            }
+        }
+        entries[name] = {
+            path: file.replace('module.json', entry),
+            data: module
+        };
+    });
+    return entries;
+};
+
+exports.entries = exports.getEntries();

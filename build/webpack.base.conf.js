@@ -1,4 +1,5 @@
 const path = require('path');
+
 const utils = require('./utils');
 const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
@@ -19,22 +20,31 @@ const createLintingRule = () => ({
 });
 
 module.exports = {
-    context: path.resolve(__dirname, '../'),
-    entry: {
-        app: './src/main.js'
-    },
+    // context: path.resolve(__dirname, '../'),
+    cache: true,
+    // entry: {
+    //     homepage: 'src/homepage/main.js'
+    // },
+    entry: Object.keys(utils.entries).reduce((r, key) => {
+        r[key] = utils.entries[key].path;
+        return r;
+    }, {}),
     output: {
         path: config.build.assetsRoot,
         filename: '[name].js',
         publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+            ? config.build.assetsPublicPath
+            : config.dev.assetsPublicPath
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             vue$: 'vue/dist/vue.esm.js',
-            '@': resolve('src')
+            src: resolve('src'),
+            common: resolve('src/common'),
+            enum: 'easy-enum.js',
+            store: 'store/dist/store.modern',
+            log: 'common/utils/log'
         }
     },
     module: {

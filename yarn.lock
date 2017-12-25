@@ -3865,6 +3865,10 @@ lodash.defaultsdeep@4.3.2:
     lodash.mergewith "^4.0.0"
     lodash.rest "^4.0.0"
 
+lodash.endswith@^4.2.1:
+  version "4.2.1"
+  resolved "http://registry.npm.taobao.org/lodash.endswith/download/lodash.endswith-4.2.1.tgz#fed59ac1738ed3e236edd7064ec456448b37bc09"
+
 lodash.get@^3.7.0:
   version "3.7.0"
   resolved "http://registry.npm.taobao.org/lodash.get/download/lodash.get-3.7.0.tgz#3ce68ae2c91683b281cc5394128303cbf75e691f"
@@ -3880,9 +3884,17 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "http://registry.npm.taobao.org/lodash.isarray/download/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+lodash.isfunction@^3.0.8:
+  version "3.0.8"
+  resolved "http://registry.npm.taobao.org/lodash.isfunction/download/lodash.isfunction-3.0.8.tgz#4db709fc81bc4a8fd7127a458a5346c5cdce2c6b"
+
 lodash.isplainobject@^4.0.0:
   version "4.0.6"
   resolved "http://registry.npm.taobao.org/lodash.isplainobject/download/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+
+lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "http://registry.npm.taobao.org/lodash.isstring/download/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
 
 lodash.keys@^3.0.0:
   version "3.1.2"
@@ -3908,6 +3920,10 @@ lodash.rest@^4.0.0:
   version "4.0.5"
   resolved "http://registry.npm.taobao.org/lodash.rest/download/lodash.rest-4.0.5.tgz#954ef75049262038c96d1fc98b28fdaf9f0772aa"
 
+lodash.startswith@^4.2.1:
+  version "4.2.1"
+  resolved "http://registry.npm.taobao.org/lodash.startswith/download/lodash.startswith-4.2.1.tgz#c598c4adce188a27e53145731cdc6c0e7177600c"
+
 lodash.tail@^4.1.1:
   version "4.1.1"
   resolved "http://registry.npm.taobao.org/lodash.tail/download/lodash.tail-4.1.1.tgz#d2333a36d9e7717c8ad2f7cacafec7c32b444664"
@@ -3926,9 +3942,19 @@ log-symbols@^1.0.2:
   dependencies:
     chalk "^1.0.0"
 
+log-symbols@^2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/log-symbols/download/log-symbols-2.1.0.tgz#f35fa60e278832b538dc4dddcbb478a45d3e3be6"
+  dependencies:
+    chalk "^2.0.1"
+
 loglevel@^1.4.1:
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/loglevel/download/loglevel-1.6.0.tgz#ae0caa561111498c5ba13723d6fb631d24003934"
+
+loglevelnext@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/loglevelnext/download/loglevelnext-1.0.1.tgz#8b17b5a43395338a96c67911a962c44af466d1c8"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -3940,7 +3966,7 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0"
 
-loud-rejection@^1.0.0:
+loud-rejection@^1.0.0, loud-rejection@^1.6.0:
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/loud-rejection/download/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
   dependencies:
@@ -4077,6 +4103,10 @@ mime@1.4.1:
 mime@^1.2.11, mime@^1.4.1, mime@^1.5.0:
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/mime/download/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
+
+mime@^2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/mime/download/mime-2.1.0.tgz#1022a5ada445aa30686e4059abaea83d0b4e8f9c"
 
 mimic-fn@^1.0.0:
   version "1.1.0"
@@ -5207,7 +5237,7 @@ querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "http://registry.npm.taobao.org/querystring-es3/download/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
 
-querystring@0.2.0:
+querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/querystring/download/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
@@ -6372,9 +6402,22 @@ unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/unpipe/download/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
 
+upath@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/upath/download/upath-1.0.2.tgz#80aaae5395abc5fd402933ae2f58694f0860204c"
+  dependencies:
+    lodash.endswith "^4.2.1"
+    lodash.isfunction "^3.0.8"
+    lodash.isstring "^4.0.1"
+    lodash.startswith "^4.2.1"
+
 upper-case@^1.1.1:
   version "1.1.3"
   resolved "http://registry.npm.taobao.org/upper-case/download/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
+
+url-join@^2.0.2:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/url-join/download/url-join-2.0.2.tgz#c072756967ad24b8b59e5741551caac78f50b8b7"
 
 url-loader@^0.6.2:
   version "0.6.2"
@@ -6552,6 +6595,18 @@ webpack-dev-middleware@^1.11.0:
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
 
+webpack-dev-middleware@^2.0.3:
+  version "2.0.3"
+  resolved "http://registry.npm.taobao.org/webpack-dev-middleware/download/webpack-dev-middleware-2.0.3.tgz#44e15480ec58d275417ac4d93a0126c7b72450bd"
+  dependencies:
+    loud-rejection "^1.6.0"
+    memory-fs "~0.4.1"
+    mime "^2.1.0"
+    path-is-absolute "^1.0.0"
+    range-parser "^1.0.3"
+    url-join "^2.0.2"
+    webpack-log "^1.0.1"
+
 webpack-dev-server@^2.9.1:
   version "2.9.7"
   resolved "http://registry.npm.taobao.org/webpack-dev-server/download/webpack-dev-server-2.9.7.tgz#100ad6a14775478924d417ca6dcfb9d52a98faed"
@@ -6584,6 +6639,24 @@ webpack-dev-server@^2.9.1:
     webpack-dev-middleware "^1.11.0"
     yargs "^6.6.0"
 
+webpack-hot-middleware@^2.21.0:
+  version "2.21.0"
+  resolved "http://registry.npm.taobao.org/webpack-hot-middleware/download/webpack-hot-middleware-2.21.0.tgz#7b3c113a7a4b301c91e0749573c7aab28b414b52"
+  dependencies:
+    ansi-html "0.0.7"
+    html-entities "^1.2.0"
+    querystring "^0.2.0"
+    strip-ansi "^3.0.0"
+
+webpack-log@^1.0.1:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/webpack-log/download/webpack-log-1.1.0.tgz#fc17ce3aba349130d09464ee31d04686e8023f6a"
+  dependencies:
+    chalk "^2.1.0"
+    log-symbols "^2.1.0"
+    loglevelnext "^1.0.1"
+    uuid "^3.1.0"
+
 webpack-merge@^4.1.0:
   version "4.1.1"
   resolved "http://registry.npm.taobao.org/webpack-merge/download/webpack-merge-4.1.1.tgz#f1197a0a973e69c6fbeeb6d658219aa8c0c13555"
@@ -6597,7 +6670,7 @@ webpack-sources@^1.0.1:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^3.6.0:
+webpack@^3.10.0:
   version "3.10.0"
   resolved "http://registry.npm.taobao.org/webpack/download/webpack-3.10.0.tgz#5291b875078cf2abf42bdd23afe3f8f96c17d725"
   dependencies:
