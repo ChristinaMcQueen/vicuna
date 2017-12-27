@@ -1,1 +1,4 @@
-{"name": "homepage", "entry": "main.js"}
+{
+    "name": "homepage",
+    "entry": "main.js"
+}

@@ -1,7 +1,13 @@
 <template>
     <div id="app">
-        <img src="./assets/logo.png">
-        <router-view/>
+        <transition name="slide" :leave-active-class="leaveActiveClass" :enter-active-class="enterActiveClass">
+            <keep-alive>
+                <router-view v-if="$route.meta.keepAlive" class="page" :key="$route.name"></router-view>
+            </keep-alive>
+        </transition>
+        <transition name="slide" :leave-active-class="leaveActiveClass" :enter-active-class="enterActiveClass">
+            <router-view class="page" v-if="!$route.meta.keepAlive" :key="$route.name"></router-view>
+        </transition>
     </div>
 </template>
 

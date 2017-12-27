@@ -50,8 +50,10 @@ module.exports = {
         }],
         "max-len": ["error", {
             "code": 120,
-            "ignoreComments": true,
-            "ignoreTrailingComments": true
+            "ignoreUrls": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true
         }],
         "comma-dangle": ["error", "never"],
         "quotes": ["error", "single"],

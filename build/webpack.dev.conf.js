@@ -6,6 +6,7 @@ const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
+// const hash = require('../cache/deps.json').name.match(/deps\.([0-9a-f]+)\.js/)[1];
 
 const HOST = process.env.HOST;
 const PORT = process.env.PORT && Number(process.env.PORT);
@@ -44,12 +45,25 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
         new webpack.NoEmitOnErrorsPlugin(),
         // https://github.com/ampedandwired/html-webpack-plugin
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
+        // new HtmlWebpackPlugin({
+        //     filename: 'index.html',
+        //     template: 'index.html',
+        //     inject: true
+        // })
+    ].concat(Object.keys(utils.entries).map(name =>
+        // generate dist index.html with correct asset hash for caching.
+        // you can customize output by editing /index.html
+        // see https://github.com/ampedandwired/html-webpack-plugin
+        (new HtmlWebpackPlugin({
+            filename: `${name}.html`,
             template: 'index.html',
-            inject: true
-        })
-    ]
+            jsPath: '/',
+            inject: true,
+            chunks: [name],
+            // depsHash: hash,
+            hash: false,
+            title: utils.entries[name].data.title || 'vicuna'
+        }))))
 });
 
 module.exports = new Promise((resolve, reject) => {
