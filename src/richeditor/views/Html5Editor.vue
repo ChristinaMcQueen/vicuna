@@ -1,7 +1,7 @@
 <template>
     <div class="wrap">
         <h1>Html5 Editor</h1>
-        <editor id="editor" class="editor-warp" :content="content"></editor>
+        <editor id="editor" class="editor-warp" :content="content" @change="updateData"></editor>
         <counter :text="text"></counter>
     </div>
 </template>
@@ -39,8 +39,8 @@ const opts = {
             fieldName: {}
         },
         compress: {
-            width: 100,
-            height: 100
+            // width: 1400,
+            // height: 100
             // quality: 80
         },
         uploadHandler(responseText) {
@@ -91,6 +91,11 @@ export default {
     created() {
     },
     methods: {
+        updateData(updateContent) {
+            // sync content to component
+            console.log(updateContent);
+            this.content = updateContent.replace('<img', '<img width="100%"');
+        }
     },
     computed: {
     }
