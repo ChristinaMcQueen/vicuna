@@ -1,4 +1,4 @@
-# y
+# vicuna
 
 > A Vue.js project
 
