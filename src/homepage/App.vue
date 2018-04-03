@@ -1,3 +1,4 @@
+<script src="../../build/webpack.dev.conf.js"></script>
 <template>
     <div id="app">
         <transition name="slide" :leave-active-class="leaveActiveClass" :enter-active-class="enterActiveClass">

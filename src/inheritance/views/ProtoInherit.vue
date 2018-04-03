@@ -13,7 +13,6 @@
     </div>
 </template>
 
-
 <script>
 function Super() {
     this.val = 1;

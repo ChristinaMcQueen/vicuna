@@ -1,4 +1,4 @@
-import init from 'common/initialize';
+import init from '../common/initialize';
 import router from './router';
 import store from './store';
 

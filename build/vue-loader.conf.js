@@ -18,5 +18,9 @@ module.exports = {
         source: 'src',
         img: 'src',
         image: 'xlink:href'
-    }
+    },
+    preserveWhitespace: false,
+    modules: true,
+    localIdentName: '[name]--[local]--[hash:base64:5]',
+    importLoaders: true
 };

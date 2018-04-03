@@ -35,8 +35,12 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
+        modules: [
+            resolve('src'),
+            resolve('node_modules')
+        ],
         alias: {
-            vue$: 'vue/dist/vue.esm.js',
+            vue$: 'vue/dist/vue.runtime.esm.js',
             src: resolve('src'),
             common: resolve('src/common'),
             enum: 'easy-enum.js',
@@ -66,14 +70,6 @@ module.exports = {
                 }
             },
             {
-                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 10000,
-                    name: utils.assetsPath('media/[name].[hash:7].[ext]')
-                }
-            },
-            {
                 test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
@@ -84,15 +80,13 @@ module.exports = {
         ]
     },
     node: {
-        // prevent webpack from injecting useless setImmediate polyfill because Vue
-        // source contains it (although only uses it if it's native).
-        setImmediate: false,
-        // prevent webpack from injecting mocks to Node native modules
-        // that does not make sense for the client
         dgram: 'empty',
         fs: 'empty',
         net: 'empty',
         tls: 'empty',
         child_process: 'empty'
+    },
+    performance: {
+        hints: false
     }
 };
